@@ -268,11 +268,11 @@ def main():
             show_progress_bar=False
         )
 
-        for path, h, vec in zip(batch_paths, batch_hashes, vectors):
+        for path, h, vec, text in zip(batch_paths, batch_hashes, vectors, batch_texts):
             index[path] = {
                 "vector": vec.astype(np.float32),
                 "hash": h,
-                "snippet": pending_texts[pending_paths.index(path)][:200]
+                "snippet": text[:200]
             }
             total += 1
             unsaved += 1
