@@ -15,6 +15,7 @@ No API keys. No cloud dependency. Your skills, your machine, your vectors.
 | **`gemini-deep-research-browser`** | Workflow for building a Gemini Deep Research Gem + launching high-precision research sessions. Template included. |
 | **`hestiacp-devops`** | Two-brain Orchestrator+Sentinel AI architecture for autonomous VPS management. Covers PHP-FPM tuning, Exim forensics, post-compromise detection. |
 | **`blind-spot-advisor`** | Surfaces compliance, trust, conversion, and strategic risks that implementation plans miss. Runs AFTER planning, BEFORE execution. |
+| ⚙️ **`mrl-indexer` rewrite** | Zero-config rebuild — auto-detects `skills/` from repo root, scans `knowledge/` + `prompts/` subdirs per skill. No private paths. Run `python mrl-indexer/mrl_index.py` and it just works. |
 
 ---
 
