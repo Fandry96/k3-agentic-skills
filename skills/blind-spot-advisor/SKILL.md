@@ -5,7 +5,7 @@ description: Surfaces risks, blind spots, and opportunities the operator didn't 
 
 # Blind Spot Advisor
 
-> **Source:** Atlas UX Proactive Advisor pattern, adapted for K3/VantageVault
+> **Source:** Atlas UX Proactive Advisor pattern, adapted for K3 Agentic Infrastructure
 > **Version:** 1.0
 > **Trigger:** Run AFTER an implementation plan is drafted, BEFORE execution begins
 
@@ -32,24 +32,16 @@ Evaluate the plan against EVERY item below. For each category, output findings o
 
 ## Blind Spot Checklists
 
-### 🔴 Compliance & Legal (VantageVault-Specific)
+### 🔴 Compliance & Legal
 
-- [ ] **Fair Housing Act (42 U.S.C. § 3604):** Does any generated content, filter, or recommendation discriminate on protected classes (race, color, religion, sex, familial status, national origin, disability)?
-- [ ] **RESPA (12 U.S.C. § 2607):** Does the feature create or imply referral fee arrangements between service providers?
-- [ ] **USPAP:** Does the feature present property valuations that could be construed as formal appraisals?
-- [ ] **MLS/RESO:** Does the feature redistribute MLS data? Is RESO Web API compliance verified?
-- [ ] **Florida Real Estate Law (Ch. 475 F.S.):** Does the feature involve brokerage activities requiring licensure?
-- [ ] **Attorney Advertising Rules (FL Bar 4-7):** Does any content constitute attorney advertising without proper disclaimers?
-- [ ] **CCPA/Privacy:** Does the feature collect, store, or process PII? Is consent captured?
-- [ ] **CAN-SPAM:** Does the feature send unsolicited commercial email?
-
-### 🟡 Trust & Credibility
-
-- [ ] **Source Attribution:** Are data claims sourced? Can users verify them?
-- [ ] **AI Disclosure:** Is AI-generated content labeled as such?
-- [ ] **Testimonial Compliance:** Are testimonials real? Do they include required FTC disclaimers?
-- [ ] **Professional Credentials:** Are Tessa's bar admissions (FL, CA, NY) accurately represented?
-- [ ] **Update Freshness:** Is displayed data stale? What's the refresh cadence?
+- [ ] **Data Privacy (GDPR/CCPA):** Does the feature collect, store, or process PII? Is consent captured and revocable?
+- [ ] **Industry Licensing:** Does the feature involve activities that require professional licensure in the target jurisdiction?
+- [ ] **Advertising Rules:** Does any AI-generated content constitute advertising? Are required disclosures present?
+- [ ] **Data Redistribution:** Does the feature use third-party data (APIs, feeds)? Are redistribution terms verified?
+- [ ] **Accessibility (WCAG 2.2 AA):** Does the feature meet minimum accessibility requirements?
+- [ ] **Professional Credentials:** Are any professional credentials, certifications, or qualifications accurately and compliantly represented?
+- [ ] **CAN-SPAM / Commercial Email:** Does the feature send unsolicited commercial messages?
+- [ ] **Terms of Service:** Does the feature comply with third-party platform ToS (APIs, embeds, data providers)?
 
 ### 🟢 Conversion & UX
 
