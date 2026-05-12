@@ -1,0 +1,528 @@
+# HestiaCP CLI Commands Reference
+
+## 1. Verified System Paths (Consult `01-hestia-system-paths.md`)
+**CRITICAL:** All binaries are located in `/usr/local/hestia/bin/`. Always use `sudo -n`.
+
+**Syntax:** `sudo -n /usr/local/hestia/bin/v-[command] [args]`
+
+**Key Pattern:**
+Many commands support a `json` argument at the end to output data in JSON format.
+**Example:** `sudo -n /usr/local/hestia/bin/v-list-sys-services json`
+
+## 2. Complete Command List
+This list reflects the verified binaries in `/usr/local/hestia/bin/`.
+
+### A
+- `v-acknowledge-user-notification`: Acknowledge a notification.
+- `v-add-access-key`: Create a new API access key.
+- `v-add-backup-host`: Add a remote backup destination (SFTP, FTP, etc).
+- `v-add-backup-host-restic`: Add a remote backup destination for Restic.
+- `v-add-cron-hestia-autoupdate`: Enable auto-updates for Hestia.
+- `v-add-cron-job`: Create a new cron job.
+- `v-add-cron-letsencrypt-job`: Setup auto-renewal for SSL.
+- `v-add-cron-reports`: Enable system reports cron.
+- `v-add-cron-restart-job`: Add service restart cron.
+- `v-add-database`: Create a new database.
+- `v-add-database-host`: Register a remote database server.
+- `v-add-database-temp-user`: Create temporary DB user.
+- `v-add-dns-domain`: Create a DNS zone.
+- `v-add-dns-on-web-alias`: Add DNS record for web alias.
+- `v-add-dns-record`: Add a specific DNS record.
+- `v-add-domain`: Add domain (shortcut).
+- `v-add-fastcgi-cache`: Enable Nginx caching.
+- `v-add-firewall-ban`: Manually ban an IP.
+- `v-add-firewall-chain`: Create custom firewall chain.
+- `v-add-firewall-ipset`: Create IP set.
+- `v-add-firewall-rule`: Open/Close a port.
+- `v-add-fs-directory`: Create directory.
+- `v-add-fs-file`: Create file.
+- `v-add-letsencrypt-domain`: Issue SSL certificate.
+- `v-add-letsencrypt-user`: Issue SSL for control panel.
+- `v-add-mail-account`: Create email address.
+- `v-add-mail-account-alias`: Add email alias.
+- `v-add-mail-account-autoreply`: Set auto-responder.
+- `v-add-mail-account-forward`: Forward email.
+- `v-add-mail-account-fwd-only`: Forward only (no storage).
+- `v-add-mail-domain`: Add mail domain.
+- `v-add-mail-domain-antispam`: Enable SpamAssassin.
+- `v-add-mail-domain-antivirus`: Enable ClamAV.
+- `v-add-mail-domain-catchall`: Configure catch-all.
+- `v-add-mail-domain-dkim`: Enable DKIM.
+- `v-add-mail-domain-reject`: Reject mail for domain.
+- `v-add-mail-domain-smtp-relay`: Configure SMTP relay.
+- `v-add-mail-domain-ssl`: Add SSL to mail domain.
+- `v-add-mail-domain-webmail`: Enable webmail.
+- `v-add-remote-dns-domain`: Add remote DNS zone.
+- `v-add-remote-dns-host`: Add remote DNS server.
+- `v-add-remote-dns-record`: Add remote record.
+- `v-add-sys-api-ip`: Whitelist IP for API.
+- `v-add-sys-firewall`: Enable firewall service.
+- `v-add-sys-ip`: Add system IP.
+- `v-add-sys-quota`: Enable filesystem quotas.
+- `v-add-sys-sftp-jail`: Enable chroot for SFTP.
+- `v-add-sys-smtp`: Enable SMTP service.
+- `v-add-sys-smtp-relay`: Configure global SMTP relay.
+- `v-add-sys-ssh-jail`: Enable SSH jail.
+- `v-add-sys-web-terminal`: Enable web terminal.
+- `v-add-user`: Create new user.
+- `v-add-user-sftp-jail`: Jail a specific user.
+- `v-add-web-domain`: Create website.
+- `v-add-web-domain-alias`: Add domain alias.
+- `v-add-web-domain-allow-users`: Allow other users to access domain.
+- `v-add-web-domain-backend`: Set PHP backend.
+- `v-add-web-domain-ftp`: Create FTP account.
+- `v-add-web-domain-httpauth`: Password protect directory.
+- `v-add-web-domain-proxy`: Configure Nginx proxy.
+- `v-add-web-domain-redirect`: Setup 301 redirect.
+- `v-add-web-domain-ssl`: Add custom SSL cert.
+- `v-add-web-domain-ssl-force`: Force HTTPS.
+- `v-add-web-domain-ssl-hsts`: Enable HSTS.
+- `v-add-web-domain-stats`: Enable statistics (awstats/webalizer).
+- `v-add-web-domain-stats-user`: Create stats user.
+- `v-add-web-php`: Add PHP version.
+
+### B
+- `v-backup-user`: Run manual backup.
+- `v-backup-user-config`: Backup only configuration.
+- `v-backup-user-restic`: Backup via Restic.
+- `v-backup-users`: Backup multiple users.
+- `v-backup-users-custom`: **CUSTOM:** Enhanced backup script.
+- `v-backup-users-restic`: Backup all users via Restic.
+
+### C
+- `v-change-cron-job`: Edit cron job.
+- `v-change-database-host-password`: Change DB host pass.
+- `v-change-database-owner`: Transfer DB ownership.
+- `v-change-database-password`: Change DB user pass.
+- `v-change-database-user`: Rename DB user.
+- `v-change-dns-domain-dnssec`: Toggle DNSSEC.
+- `v-change-dns-domain-exp`: Change expiration.
+- `v-change-dns-domain-ip`: Change DNS IP.
+- `v-change-dns-domain-soa`: Edit SOA record.
+- `v-change-dns-domain-tpl`: Change DNS template.
+- `v-change-dns-domain-ttl`: Change TTL.
+- `v-change-dns-record`: Edit DNS record.
+- `v-change-dns-record-id`: Edit record ID.
+- `v-change-domain-owner`: Transfer domain.
+- `v-change-firewall-rule`: Edit firewall rule.
+- `v-change-fs-file-permission`: Chmod file.
+- `v-change-mail-account-password`: Change email pass.
+- `v-change-mail-account-quota`: Change mailbox size.
+- `v-change-mail-account-rate-limit`: Limit outgoing mail.
+- `v-change-mail-domain-catchall`: Edit catch-all.
+- `v-change-mail-domain-rate-limit`: Limit domain mail.
+- `v-change-mail-domain-sslcert`: Replace mail SSL.
+- `v-change-remote-dns-domain-exp`: Remote expire.
+- `v-change-remote-dns-domain-soa`: Remote SOA.
+- `v-change-remote-dns-domain-ttl`: Remote TTL.
+- `v-change-sys-api`: Edit API config.
+- `v-change-sys-config-value`: Edit hestia.conf.
+- `v-change-sys-db-alias`: Alias for DB host.
+- `v-change-sys-demo-mode`: Toggle demo.
+- `v-change-sys-hestia-ssl`: Change panel SSL.
+- `v-change-sys-hostname`: Set hostname.
+- `v-change-sys-ip-name`: Label IP.
+- `v-change-sys-ip-nat`: Configure NAT IP.
+- `v-change-sys-ip-owner`: Change IP owner.
+- `v-change-sys-ip-status`: Enable/Disable IP.
+- `v-change-sys-language`: Set system lang.
+- `v-change-sys-php`: Switch default PHP.
+- `v-change-sys-port`: Change panel port.
+- `v-change-sys-release`: Update OS release info.
+- `v-change-sys-service-config`: Edit service conf.
+- `v-change-sys-timezone`: Set timezone.
+- `v-change-sys-webmail`: Switch webmail client.
+- `v-change-sys-web-terminal-port`: Port for web term.
+- `v-change-user-config-value`: Edit user conf.
+- `v-change-user-contact`: Edit contact info.
+- `v-change-user-language`: User lang.
+- `v-change-user-name`: Rename user (display name).
+- `v-change-user-ns`: Nameservers.
+- `v-change-user-package`: Change plan.
+- `v-change-user-password`: Change pass.
+- `v-change-user-php-cli`: User PHP CLI version.
+- `v-change-user-rkey`: Rotate API key.
+- `v-change-user-role`: Change role.
+- `v-change-user-shell`: Change SSH shell.
+- `v-change-user-sort-order`: UI sort.
+- `v-change-user-template`: UI template.
+- `v-change-user-theme`: UI theme.
+- `v-change-web-domain-backend-tpl`: PHP-FPM template.
+- `v-change-web-domain-dirlist`: Directory listing.
+- `v-change-web-domain-docroot`: Document root.
+- `v-change-web-domain-ftp-password`: FTP pass.
+- `v-change-web-domain-ftp-path`: FTP path.
+- `v-change-web-domain-httpauth`: HTTP Auth.
+- `v-change-web-domain-ip`: Website IP.
+- `v-change-web-domain-name`: Rename domain.
+- `v-change-web-domain-proxy-tpl`: Nginx proxy template.
+- `v-change-web-domain-sslcert`: Replace SSL.
+- `v-change-web-domain-sslhome`: SSL directory.
+- `v-change-web-domain-stats`: Stats software.
+- `v-change-web-domain-tpl`: Web template.
+- `v-check-access-key`: Validate key.
+- `v-check-api-key`: Check API.
+- `v-check-fs-permission`: Verify perms.
+- `v-check-mail-account-hash`: Check mail hash.
+- `v-check-user-2fa`: Check 2FA status.
+- `v-check-user-hash`: Check user hash.
+- `v-check-user-password`: Verify password.
+- `v-clean-garbage`: **CUSTOM:** System cleanup.
+- `v-copy-fs-directory`: Copy dir.
+- `v-copy-fs-file`: Copy file.
+- `v-copy-user-package`: Duplicate package.
+
+### D
+- `v-delete-access-key`: Remove key.
+- `v-delete-backup-host`: Remove backup host.
+- `v-delete-backup-host-restic`: Remove restic host.
+- `v-delete-cron-hestia-autoupdate`: Disable auto-update.
+- `v-delete-cron-job`: Remove cron.
+- `v-delete-cron-reports`: Disable reports.
+- `v-delete-cron-restart-job`: Remove restart job.
+- `v-delete-database`: Drop DB.
+- `v-delete-database-host`: Remove DB server.
+- `v-delete-databases`: Drop all DBs.
+- `v-delete-database-temp-user`: Remove temp user.
+- `v-delete-dns-domain`: Delete zone.
+- `v-delete-dns-domains`: Delete all zones.
+- `v-delete-dns-domains-src`: Delete source zones.
+- `v-delete-dns-on-web-alias`: Cleanup alias DNS.
+- `v-delete-dns-record`: Delete record.
+- `v-delete-domain`: Delete domain (all types).
+- `v-delete-fastcgi-cache`: Clear cache.
+- `v-delete-firewall-ban`: Unban IP.
+- `v-delete-firewall-chain`: Delete chain.
+- `v-delete-firewall-ipset`: Delete ipset.
+- `v-delete-firewall-rule`: Delete rule.
+- `v-delete-fs-directory`: Remove dir.
+- `v-delete-fs-file`: Remove file.
+- `v-delete-letsencrypt-domain`: Revoke SSL.
+- `v-delete-mail-account`: Delete email.
+- `v-delete-mail-account-alias`: Delete alias.
+- `v-delete-mail-account-autoreply`: Delete auto-reply.
+- `v-delete-mail-account-forward`: Delete forward.
+- `v-delete-mail-account-fwd-only`: Delete fwd-only.
+- `v-delete-mail-domain`: Delete mail domain.
+- `v-delete-mail-domain-antispam`: Disable spam filter.
+- `v-delete-mail-domain-antivirus`: Disable AV.
+- `v-delete-mail-domain-catchall`: Disable catchall.
+- `v-delete-mail-domain-dkim`: Disable DKIM.
+- `v-delete-mail-domain-reject`: Allow mail.
+- `v-delete-mail-domains`: Delete all mail domains.
+- `v-delete-mail-domain-smtp-relay`: Disable relay.
+- `v-delete-mail-domain-ssl`: Remove SSL.
+- `v-delete-mail-domain-webmail`: Disable webmail.
+- `v-delete-remote-dns-domain`: Delete remote zone.
+- `v-delete-remote-dns-domains`: Delete all remote.
+- `v-delete-remote-dns-host`: Remove remote host.
+- `v-delete-remote-dns-record`: Delete remote record.
+- `v-delete-sys-api-ip`: Remove API IP.
+- `v-delete-sys-cgroups`: Disable cgroups.
+- `v-delete-sys-filemanager`: Remove file manager.
+- `v-delete-sys-firewall`: Disable firewall.
+- `v-delete-sys-ip`: Remove IP.
+- `v-delete-sys-mail-queue`: Clear mail queue.
+- `v-delete-sys-pma-sso`: Disable PMA SSO.
+- `v-delete-sys-quota`: Disable quota.
+- `v-delete-sys-sftp-jail`: Disable SFTP jail.
+- `v-delete-sys-smtp`: Disable SMTP.
+- `v-delete-sys-smtp-relay`: Disable global relay.
+- `v-delete-sys-snappymail`: Remove snappymail.
+- `v-delete-sys-ssh-jail`: Disable SSH jail.
+- `v-delete-sys-web-terminal`: Disable web term.
+- `v-delete-user`: Delete user account.
+- `v-delete-user-2fa`: Disable 2FA.
+- `v-delete-user-auth-log`: Clear logs.
+- `v-delete-user-backup`: Delete backup file.
+- `v-delete-user-backup-exclusions`: Clear exclusions.
+- `v-delete-user-backup-restic`: Delete restic backup.
+- `v-delete-user-ips`: Clear IP map.
+- `v-delete-user-log`: Clear user logs.
+- `v-delete-user-notification`: Clear notifications.
+- `v-delete-user-package`: Delete plan.
+- `v-delete-user-sftp-jail`: Unjail user.
+- `v-delete-user-ssh-key`: Remove SSH key.
+- `v-delete-user-stats`: Reset stats.
+- `v-delete-web-domain`: Delete website.
+- `v-delete-web-domain-alias`: Delete alias.
+- `v-delete-web-domain-allow-users`: Revoke access.
+- `v-delete-web-domain-backend`: Remove backend.
+- `v-delete-web-domain-ftp`: Delete FTP.
+- `v-delete-web-domain-httpauth`: Remove Auth.
+- `v-delete-web-domain-proxy`: Remove proxy.
+- `v-delete-web-domain-redirect`: Remove redirect.
+- `v-delete-web-domains`: Delete all sites.
+- `v-delete-web-domain-ssl`: Remove SSL.
+- `v-delete-web-domain-ssl-force`: Disable force HTTPS.
+- `v-delete-web-domain-ssl-hsts`: Disable HSTS.
+- `v-delete-web-domain-stats`: Disable stats.
+- `v-delete-web-domain-stats-user`: Delete stats user.
+- `v-delete-web-php`: Remove PHP version.
+- `v-download-backup`: Download to tmp.
+- `v-dump-database`: Export DB.
+- `v-dump-site`: Export site.
+
+### E-G
+- `v-export-rrd`: Export RRD data.
+- `v-extract-fs-archive`: Unzip.
+- `v-generate-api-key`: New API key.
+- `v-generate-password-hash`: Hash pass.
+- `v-generate-ssl-cert`: Self-signed cert.
+- `v-get-dns-domain-value`: Read DNS value.
+- `v-get-fs-file-type`: Mime type.
+- `v-get-mail-account-value`: Read mail val.
+- `v-get-mail-domain-value`: Read mail dom val.
+- `v-get-sys-timezone`: Show timezone.
+- `v-get-sys-timezones`: List zones.
+- `v-get-user-salt`: Get salt.
+- `v-get-user-value`: Read user val.
+- `v-github-mirror`: **CUSTOM:** Git mirror tool.
+
+### I-L
+- `v-import-cpanel`: Migration from cPanel.
+- `v-import-database`: Import DB dump.
+- `v-import-directadmin`: Migration from DA.
+- `v-insert-dns-domain`: Raw insert zone.
+- `v-insert-dns-record`: Raw insert record.
+- `v-insert-dns-records`: Bulk insert.
+- `v-list-access-key`: Show key details.
+- `v-list-access-keys`: List keys.
+- `v-list-api`: Show API.
+- `v-list-apis`: List APIs.
+- `v-list-backup-host`: Show backup host.
+- `v-list-backup-host-restic`: Show restic host.
+- `v-list-cron-job`: Show cron details.
+- `v-list-cron-jobs`: List crons.
+- `v-list-database`: Show DB details.
+- `v-list-database-host`: Show DB server.
+- `v-list-database-hosts`: List DB servers.
+- `v-list-databases`: List DBs.
+- `v-list-database-types`: Supported DBs.
+- `v-list-default-php`: Default PHP ver.
+- `v-list-dns-domain`: Show zone details.
+- `v-list-dns-domains`: List zones.
+- `v-list-dns-records`: List records.
+- `v-list-dnssec-public-key`: Show DNSSEC key.
+- `v-list-dns-template`: Show template.
+- `v-list-dns-templates`: List templates.
+- `v-list-firewall`: List rules.
+- `v-list-firewall-ban`: List bans.
+- `v-list-firewall-ipset`: List ipsets.
+- `v-list-firewall-rule`: Show rule details.
+- `v-list-fs-directory`: Ls dir.
+- `v-list-letsencrypt-user`: LE user details.
+- `v-list-mail-account`: Show email details.
+- `v-list-mail-account-autoreply`: Show auto-reply.
+- `sudo -n /usr/local/hestia/bin/v-list-mail-accounts [user] [domain] json`: List mail accounts for a domain.
+- `v-list-mail-domain`: Show domain details.
+- `v-list-mail-domain-dkim`: Show DKIM.
+- `v-list-mail-domain-dkim-dns`: Show DNS records for DKIM.
+- `sudo -n /usr/local/hestia/bin/v-list-mail-domains [user] json`: List mail domains.
+- `v-list-mail-domain-ssl`: Show SSL details.
+- `v-list-remote-dns-hosts`: List remote hosts.
+- `v-list-sys-clamd-config`: ClamAV conf.
+- `v-list-sys-config`: System conf.
+- `v-list-sys-cpu-status`: CPU load.
+- `v-list-sys-db-status`: DB status.
+- `v-list-sys-disk-status`: Disk usage.
+- `v-list-sys-dns-status`: DNS status.
+- `v-list-sys-dovecot-config`: Dovecot conf.
+- `v-list-sys-hestia-autoupdate`: Update status.
+- `v-list-sys-hestia-ssl`: Panel SSL.
+- `v-list-sys-hestia-updates`: Avail updates.
+- `v-list-sys-info`: OS/Hestia info.
+- `v-list-sys-interfaces`: Network interfaces.
+- `v-list-sys-ip`: IP details.
+- `v-list-sys-ips`: List IPs.
+- `v-list-sys-languages`: Languages.
+- `v-list-sys-mail-status`: Mail queue status.
+- `v-list-sys-memory-status`: RAM usage.
+- `v-list-sys-mysql-config`: My.cnf.
+- `v-list-sys-network-status`: Net stats.
+- `v-list-sys-nginx-config`: Nginx conf.
+- `v-list-sys-pgsql-config`: PgSQL conf.
+- `v-list-sys-php`: PHP versions.
+- `v-list-sys-php-config`: Php.ini.
+- `v-list-sys-proftpd-config`: FTP conf.
+- `v-list-sys-rrd`: RRD graphs.
+- `v-list-sys-services`: Service status.
+- `v-list-sys-shells`: Avail shells.
+- `v-list-sys-spamd-config`: SpamAssassin conf.
+- `v-list-sys-sshd-port`: SSH port.
+- `v-list-sys-themes`: Themes.
+- `v-list-sys-users`: Connected users.
+- `v-list-sys-vsftpd-config`: VSFTPD conf.
+- `v-list-sys-webmail`: Webmail clients.
+- `v-list-sys-web-status`: Web status.
+- `v-list-user`: Show user details.
+- `v-list-user-auth-log`: Auth history.
+- `v-list-user-backup`: Show backup details.
+- `v-list-user-backup-exclusions`: Exclusions.
+- `v-list-user-backup-restic`: Restic details.
+- `v-list-user-backups`: List backups.
+- `v-list-user-backups-restic`: List restic backups.
+- `v-list-user-files-restic`: List files in restic.
+- `v-list-user-ips`: User IPs.
+- `v-list-user-log`: User action log.
+- `v-list-user-notifications`: User notifs.
+- `v-list-user-ns`: User NS.
+- `v-list-user-package`: Package details.
+- `v-list-user-packages`: List packages.
+- `v-list-users`: List users.
+- `v-list-user-ssh-key`: SSH keys.
+- `v-list-users-stats`: Stats summary.
+- `v-list-user-stats`: User stats.
+- `v-list-web-domain`: Web domain details.
+- `v-list-web-domain-accesslog`: Access log path/content.
+- `v-list-web-domain-errorlog`: Error log path/content.
+- `v-list-web-domains`: List websites.
+- `v-list-web-domain-ssl`: SSL details.
+- `v-list-web-stats`: Web stats.
+- `v-list-web-templates`: Avail templates.
+- `v-list-web-templates-backend`: Avail backend templates.
+- `v-list-web-templates-proxy`: Avail proxy templates.
+- `v-log-action`: Log system action.
+- `v-log-user-login`: Log login.
+- `v-log-user-logout`: Log logout.
+
+### M-R
+- `v-move-fs-directory`: Move dir.
+- `v-move-fs-file`: Move file.
+- `v-open-fs-config`: Read config file.
+- `v-open-fs-file`: Read file.
+- `v-purge-nginx-cache`: Clear cache.
+- `v-quick-install-app`: Install WP/etc.
+- `v-rebuild-all`: Rebuild everything.
+- `v-rebuild-cron-jobs`: Rebuild cron.
+- `v-rebuild-database`: Rebuild DB.
+- `v-rebuild-databases`: Rebuild all DBs.
+- `v-rebuild-dns-domain`: Rebuild zone.
+- `v-rebuild-dns-domains`: Rebuild all zones.
+- `v-rebuild-mail-domain`: Rebuild mail config.
+- `v-rebuild-mail-domains`: Rebuild all mail.
+- `v-rebuild-user`: Rebuild user config.
+- `v-rebuild-users`: Rebuild all users.
+- `v-rebuild-web-domain`: Rebuild web config.
+- `v-rebuild-web-domains`: Rebuild all web.
+- `v-refresh-sys-theme`: Reload theme.
+- `v-rename-user-package`: Rename plan.
+- `v-repair-sys-config`: Fix system conf.
+- `v-restart-cron`: Restart cron.
+- `v-restart-dns`: Restart bind.
+- `v-restart-ftp`: Restart ftp.
+- `v-restart-mail`: Restart exim/dovecot.
+- `v-restart-proxy`: Restart nginx.
+- `v-restart-service`: Restart generic service.
+- `v-restart-system`: Reboot.
+- `v-restart-web`: Restart web stack.
+- `v-restart-web-backend`: Restart php-fpm.
+- `v-restore-cron-job`: Restore cron.
+- `v-restore-cron-job-restic`: Restore cron (restic).
+- `v-restore-database`: Restore DB.
+- `v-restore-database-restic`: Restore DB (restic).
+- `v-restore-dns-domain`: Restore zone.
+- `v-restore-dns-domain-restic`: Restore zone (restic).
+- `v-restore-file-restic`: Restore file (restic).
+- `v-restore-mail-domain`: Restore mail.
+- `v-restore-mail-domain-restic`: Restore mail (restic).
+- `v-restore-user`: Restore user.
+- `v-restore-user-full-restic`: Full restore (restic).
+- `v-restore-user.original`: Backup script.
+- `v-restore-user-restic`: User restore (restic).
+- `v-restore-web-domain`: Restore web.
+- `v-restore-web-domain-restic`: Restore web (restic).
+- `v-revoke-api-key`: Kill key.
+- `v-run-cli-cmd`: Run arbitrary cmd.
+
+### S
+- `v-schedule-letsencrypt-domain`: Queue SSL.
+- `v-schedule-user-backup`: Queue backup.
+- `v-schedule-user-backup-download`: Queue download.
+- `v-schedule-user-backup-restic`: Queue restic.
+- `v-schedule-user-restore`: Queue restore.
+- `v-schedule-user-restore-restic`: Queue restore (restic).
+- `v-search-command`: Find command.
+- `v-search-domain-owner`: Who owns domain.
+- `v-search-fs-object`: Find file.
+- `v-search-object`: Global search.
+- `v-search-user-object`: User search.
+- `v-start-service`: Start service.
+- `v-stop-firewall`: Stop firewall.
+- `v-stop-service`: Stop service.
+- `v-suspend-cron-job`: Pause cron.
+- `v-suspend-cron-jobs`: Pause all cron.
+- `v-suspend-database`: Pause DB.
+- `v-suspend-database-host`: Pause DB server.
+- `v-suspend-databases`: Pause all DBs.
+- `v-suspend-dns-domain`: Pause zone.
+- `v-suspend-dns-domains`: Pause all zones.
+- `v-suspend-dns-record`: Pause record.
+- `v-suspend-domain`: Pause domain (all).
+- `v-suspend-firewall-rule`: Pause rule.
+- `v-suspend-mail-account`: Pause email.
+- `v-suspend-mail-accounts`: Pause all emails.
+- `v-suspend-mail-domain`: Pause mail domain.
+- `v-suspend-mail-domains`: Pause all mail domains.
+- `v-suspend-remote-dns-host`: Pause remote host.
+- `v-suspend-user`: Suspend user.
+- `v-suspend-web-domain`: Pause site.
+- `v-suspend-web-domains`: Pause all sites.
+- `v-sync-dns-cluster`: Sync DNS.
+- `v-system-report`: **CUSTOM:** Health check.
+
+### U
+- `v-unsuspend-cron-job`: Resume cron.
+- `v-unsuspend-cron-jobs`: Resume all cron.
+- `v-unsuspend-database`: Resume DB.
+- `v-unsuspend-database-host`: Resume DB server.
+- `v-unsuspend-databases`: Resume all DBs.
+- `v-unsuspend-dns-domain`: Resume zone.
+- `v-unsuspend-dns-domains`: Resume all zones.
+- `v-unsuspend-dns-record`: Resume record.
+- `v-unsuspend-domain`: Resume domain (all).
+- `v-unsuspend-firewall-rule`: Resume rule.
+- `v-unsuspend-mail-account`: Resume email.
+- `v-unsuspend-mail-accounts`: Resume all emails.
+- `v-unsuspend-mail-domain`: Resume mail domain.
+- `v-unsuspend-mail-domains`: Resume all mail domains.
+- `v-unsuspend-remote-dns-host`: Resume remote host.
+- `v-unsuspend-user`: Resume user.
+- `v-unsuspend-web-domain`: Resume site.
+- `v-unsuspend-web-domains`: Resume all sites.
+- `v-update-database-disk`: Recalc DB size.
+- `v-update-databases-disk`: Recalc all DBs.
+- `v-update-dns-templates`: Update templates.
+- `v-update-firewall`: Update rules.
+- `v-update-firewall-ipset`: Update ipsets.
+- `v-update-host-certificate`: Renew host SSL.
+- `v-update-letsencrypt-ssl`: Renew cert.
+- `v-update-mail-domain-disk`: Recalc mail size.
+- `v-update-mail-domains-disk`: Recalc all mail.
+- `v-update-mail-domain-ssl`: Renew mail SSL.
+- `v-update-mail-templates`: Update templates.
+- `v-update-sys-defaults`: Reset defaults.
+- `v-update-sys-hestia`: Update Hestia.
+- `v-update-sys-hestia-all`: Update all.
+- `v-update-sys-hestia-git`: Update from git.
+- `v-update-sys-ip`: Update IP info.
+- `v-update-sys-ip-counters`: Update IP stats.
+- `v-update-sys-queue`: Process queue.
+- `v-update-sys-rrd`: Update graphs.
+- `v-update-sys-rrd-*`: Update specific graph (apache2, ftp, httpd, la, mail, mem, mysql, net, nginx, pgsql, ssh).
+- `v-update-user-backup-exclusions`: Update excludes.
+- `v-update-user-cgroup`: Update cgroups.
+- `v-update-user-counters`: Update counters.
+- `v-update-user-disk`: Recalc user disk.
+- `v-update-user-package`: Re-apply package.
+- `v-update-user-quota`: Update quota.
+- `v-update-user-stats`: Update stats.
+- `v-update-web-domain-disk`: Recalc web size.
+- `v-update-web-domains-disk`: Recalc all web.
+- `v-update-web-domain-ssl`: Renew web SSL.
+- `v-update-web-domains-stat`: Process web stats.
+- `v-update-web-domain-stat`: Process site stats.
+- `v-update-web-domains-traff`: Recalc traffic.
+- `v-update-web-domain-traff`: Recalc site traffic.
+- `v-update-web-templates`: Update web tpls.
+- `v-update-white-label-logo`: Update logo.
