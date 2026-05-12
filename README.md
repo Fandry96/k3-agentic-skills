@@ -48,7 +48,7 @@ Build a local vector index to find the right skill for any task:
 ```bash
 pip install sentence-transformers numpy
 
-# Configure source directories in mrl_index.py, then:
+# Indexes all skills/ automatically — no config needed
 python mrl-indexer/mrl_index.py
 
 # Search
